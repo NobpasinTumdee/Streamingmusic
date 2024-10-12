@@ -1,39 +1,35 @@
 package main
 
 import (
-  "gorm.io/gorm"
-  "gorm.io/driver/sqlite"
+	"music/entity"
+
+	"github.com/gin-gonic/gin"
+	"gorm.io/driver/sqlite"
+	"gorm.io/gorm"
 )
 
-type Product struct {
-  gorm.Model
-  Code  string
-  Price uint
-}
+const PORT = "8000"
 
 func main() {
-  db, err := gorm.Open(sqlite.Open("test.db"), &gorm.Config{})
+  db, err := gorm.Open(sqlite.Open("MusicData.db"), &gorm.Config{})
   if err != nil {
     panic("failed to connect database")
   }
+  db.AutoMigrate(&entity.User{},&entity.History{},&entity.Music{},&entity.MusicList{},&entity.Playlist{},&entity.Payment{},&entity.Package{},&entity.Review{},)
+}
 
-  // Migrate the schema
-  db.AutoMigrate(&Product{})
+func CORSMiddleware() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
+		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With")
+		c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT, DELETE, PATCH")
 
-  // Create
-  db.Create(&Product{Code: "D42", Price: 100})
+		if c.Request.Method == "OPTIONS" {
+			c.AbortWithStatus(204)
+			return
+		}
 
-  // Read
-  var product Product
-  db.First(&product, 1) // find product with integer primary key
-  db.First(&product, "code = ?", "D42") // find product with code D42
-
-  // Update - update product's price to 200
-  db.Model(&product).Update("Price", 200)
-  // Update - update multiple fields
-  db.Model(&product).Updates(Product{Price: 200, Code: "F42"}) // non-zero fields
-  db.Model(&product).Updates(map[string]interface{}{"Price": 200, "Code": "F42"})
-
-  // Delete - delete product
-  db.Delete(&product, 1)
+		c.Next()
+	}
 }
