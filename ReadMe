@@ -11,3 +11,6 @@ go get -u golang.org/x/crypto@v0.16.0
 npm create vite@latest ชื่อ
 npm install
 npm run dev
+
+
+npm i antd
