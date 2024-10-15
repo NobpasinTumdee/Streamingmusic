@@ -14,3 +14,4 @@ npm run dev
 
 
 npm i antd
+npm install axios

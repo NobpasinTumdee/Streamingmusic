@@ -2,11 +2,12 @@
     position: fixed;
     right: 20px;
     bottom: 25px;
-    background: linear-gradient(to bottom, #313131, #030303 ,#030303);
+    background: linear-gradient(to bottom, #313131, #030303, #030303);
     width: 95%;
     height: 90%;
     border-radius: 7px;
-    overflow-y: scroll; /* เพิ่มการเลื่อนแนวตั้ง */
+    overflow-y: scroll;
+    /* เพิ่มการเลื่อนแนวตั้ง */
     scrollbar-width: none;
 }
 
@@ -21,13 +22,15 @@
     margin: 30px 20px 0;
     z-index: 1000;
 }
-.optionBtn a{
+
+.optionBtn a {
     margin: 10px;
     height: auto;
     text-decoration: none;
-    
+
 }
-.optionA{
+
+.optionA {
     box-shadow: 0 0 10px #00000071;
     border-radius: 20px;
     width: 40px;
@@ -37,14 +40,15 @@
 
 
 
-.topboxmain{
+.topboxmain {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 80px;
     margin-left: 20px;
 }
-.boxMain{
+
+.boxMain {
     margin: 0px;
     width: 100%;
     height: 60px;
@@ -52,14 +56,16 @@
     border-radius: 5px;
     box-shadow: 0 0 15px #00000036;
 }
-.boxMain img{
+
+.boxMain img {
     width: 60px;
     height: 60px;
     border-radius: 5px 0 0 5px;
     position: absolute;
     box-shadow: 0 0 15px #1f1f1f;
 }
-.boxMain p{
+
+.boxMain p {
     color: #ffffff;
     position: relative;
     margin-left: 80px;
@@ -70,7 +76,8 @@
 .playbtn {
     position: absolute;
 }
-.playbtn img{
+
+.playbtn img {
     width: 50px;
     height: 50px;
     transform: translate(290px, 55px);
@@ -79,9 +86,10 @@
 
     visibility: hidden;
     opacity: 0;
-    transition:  0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
 }
-.boxMain:hover .playbtn img{
+
+.boxMain:hover .playbtn img {
     visibility: visible;
     opacity: 1;
 }
@@ -89,17 +97,18 @@
 
 
 
-.PlaylistMainUser{
+.PlaylistMainUser {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 10px;
     margin-top: 20px;
     margin-left: 20px;
-    overflow-x: scroll; /* เพิ่มการเลื่อนแนวนอน */
+    overflow-x: scroll;
+    /* เพิ่มการเลื่อนแนวนอน */
     scrollbar-width: none;
 }
 
-.PlaylistMainUserCard{
+.PlaylistMainUserCard {
     background-color: transparent;
     width: 200px;
     height: 270px;
@@ -107,14 +116,17 @@
     padding: 10px;
     transition: 0.3s ease-in-out;
 }
-.PlaylistMainUserCard:hover{
+
+.PlaylistMainUserCard:hover {
     background-color: #404040;
 }
-.PlaylistMainUserCard img{
+
+.PlaylistMainUserCard img {
     width: 100%;
     border-radius: 7px;
 }
-.DetailsplaylistUserMain{
+
+.DetailsplaylistUserMain {
     margin-top: 5px;
     color: #ffffff86;
     font-size: 14px;
@@ -122,7 +134,7 @@
 
 
 
-.PlaylistMainplay img{
+.PlaylistMainplay img {
     position: absolute;
     width: 50px;
     height: 50px;
@@ -130,10 +142,10 @@
 
     visibility: hidden;
     opacity: 0;
-    transition:  0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
-.PlaylistMainUserCard:hover img{
+.PlaylistMainUserCard:hover img {
     visibility: visible;
     opacity: 1;
 }
@@ -151,7 +163,7 @@
     z-index: 1002;
 }
 
-.MainNav a{
+.MainNav a {
     float: right;
     color: #ffffff;
     text-align: center;
@@ -160,7 +172,8 @@
     margin-right: 30px;
     margin-top: 5px;
 }
-.MainNav img{
+
+.MainNav img {
     width: 24px;
     height: 24px;
 }
@@ -199,14 +212,15 @@
 
     visibility: hidden;
     opacity: 0;
-    transition:  0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
-.Peoplevisible:hover .People{
+.Peoplevisible:hover .People {
     visibility: visible;
     opacity: 1;
 }
-.Notification{
+
+.Notification {
     position: fixed;
     font-size: 12px;
     padding: 5px;
@@ -217,9 +231,29 @@
 
     visibility: hidden;
     opacity: 0;
-    transition:  0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
-.Notificationvisible:hover .Notification{
+
+.Notificationvisible:hover .Notification {
+    visibility: visible;
+    opacity: 1;
+}
+
+.UserMain {
+    position: fixed;
+    font-size: 12px;
+    padding: 5px;
+    transform: translate(-40px, 30px);
+    border-radius: 5px;
+    background-color: #313131;
+    box-shadow: 0 0 10px #000;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.Uservisible:hover .UserMain {
     visibility: visible;
     opacity: 1;
 }
@@ -241,15 +275,17 @@
 
 .MainSidebar li {
     background-color: transparent;
-    list-style-type: none; 
+    list-style-type: none;
     margin: 8px 3px;
     height: 43px;
     border-radius: 7px;
 }
+
 .MainSidebar img {
     height: 43px;
     border-radius: 7px;
 }
+
 .MainSidebar a {
     text-decoration: none;
     color: #000;
@@ -265,31 +301,34 @@
 
     visibility: hidden;
     opacity: 0;
-    transition:  0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
 }
-.liMain:hover .textside{
+
+.liMain:hover .textside {
     visibility: visible;
     opacity: 1;
 }
 
-.onesubsidebar{
-    background: linear-gradient(to bottom, #1F1F1F, #1F1F1F ,#1F1F1F);
+.onesubsidebar {
+    background: linear-gradient(to bottom, #1F1F1F, #1F1F1F, #1F1F1F);
     font-size: 30px;
     text-align: center;
-    
+
 }
 
-.twosubsidebar{
-    background: linear-gradient(to right, #ffd993, #cc913a ,#634000);
+.twosubsidebar {
+    background: linear-gradient(to right, #ffd993, #cc913a, #634000);
     font-size: 30px;
     text-align: center;
 }
-.onesubsidebar:hover .textside{
+
+.onesubsidebar:hover .textside {
     visibility: visible;
     opacity: 1;
     font-size: 15px;
 }
-.twosubsidebar:hover .textside{
+
+.twosubsidebar:hover .textside {
     visibility: visible;
     opacity: 1;
     font-size: 15px;

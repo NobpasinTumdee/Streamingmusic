@@ -5,6 +5,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"music/controller"
   	"net/http"
+	"music/middlewares"
+	"music/controller/user"
 )
 
 const PORT = "8000"
@@ -18,8 +20,18 @@ func main() {
 
 	r := gin.Default()
 
+	r.Use(CORSMiddleware())
+
+	r.POST("/signin", user.SignIn) //Sign in == login 
+	r.GET("/user" , user.ListUsers)
 	router := r.Group("")
 	{
+		router.Use(middlewares.Authorizes())
+
+
+		//User
+		router.GET("/user/:id", user.GetUser)
+		//Music
 		router.GET("/music", controller.ListMusics) 
 
 	}

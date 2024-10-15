@@ -1,13 +1,31 @@
 import React from 'react';
 import './Login.css'
-import { Form, Input } from 'antd';
+import { Form, Input ,message} from 'antd';
+import {SignInInterface} from "../../interfaces/SignIn";
+import { SignIn } from '../../services/https';
 const Login: React.FC = () => {
-    const onFinish = async () => {
-        
+    const [messageApi, contextHolder] = message.useMessage();
+    const onFinish = async (values: SignInInterface) => {
+        let res = await SignIn(values);
+    
+        if (res.status === 200) {
+            messageApi.success("Sign-in successful");
+    
+            localStorage.setItem("isLogin", "true");
+            localStorage.setItem("token_type", res.data.token_type);
+            localStorage.setItem("token", res.data.token);
+            localStorage.setItem("id", res.data.id);
+
+            location.href = "/Main";
+            
+        } else {
+            messageApi.error(res.data.error);
+        }
         
     };
     return(
         <>
+            {contextHolder}
             <div className='Logincontanner'>
                 <div className='Logininput'>
                     Login
