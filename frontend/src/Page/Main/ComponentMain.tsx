@@ -1,6 +1,6 @@
 import React from 'react';
 import './Main.css'
-
+import playbtn from '../../assets/icon/PlayButtonCircled.png';
 export const ComponentMain: React.FC = () => {
     const Datatest = [
         {id: 1,name: 'Polyphia'},{id: 2,name: 'Polyphia'},{id: 3,name: 'Polyphia'},{id: 4,name: 'Polyphia'},{id: 5,name: 'Polyphia'},{id: 6,name: 'Polyphia'},{id: 7,name: 'Polyphia'},{id: 8,name: 'Polyphia'},
@@ -22,11 +22,12 @@ export const ComponentMain: React.FC = () => {
                 </div>
                 <div className='topboxmain'>
                     {Datatest.map((music) => (
-                        <>
-                            <span className='boxMain' key={music.id}>
-                                <img src="https://mir-s3-cdn-cf.behance.net/projects/404/b34ed9187254619.Y3JvcCwzOTk5LDMxMjgsMCw0MzU.jpg" alt="polyphia logo" />
-                                <p>{music.name}</p>
-                            </span>
+                        <> 
+                                <span className='boxMain' key={music.id}>
+                                    <img src="https://mir-s3-cdn-cf.behance.net/projects/404/b34ed9187254619.Y3JvcCwzOTk5LDMxMjgsMCw0MzU.jpg" alt="polyphia logo" />
+                                    <span className='playbtn'><img  src={playbtn} alt="" /></span>
+                                    <p>{music.name}</p>
+                                </span>
                         </>
                     ))}
                 </div>
