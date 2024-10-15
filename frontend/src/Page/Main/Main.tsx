@@ -1,6 +1,6 @@
 import React from 'react';
 import './Main.css'
-import {ComponentMainSidebar, ComponentMain , ComponentMainNavbar } from './ComponentMain';
+import {ComponentMainSidebar, ComponentMain , ComponentMainNavbar , BottonMain} from './ComponentMain';
 const Main: React.FC = () => {
 
     return(
@@ -8,6 +8,7 @@ const Main: React.FC = () => {
             <div><ComponentMainNavbar /></div>
             <div><ComponentMainSidebar /></div>
             <ComponentMain />
+            <BottonMain />
         </>
     );
 };

@@ -143,3 +143,17 @@ export const ComponentMainSidebar: React.FC = () => {
     );
 };
 
+
+export const BottonMain: React.FC = () => {
+    return (
+        <>
+            <div className='bottoncontanner'>
+                <div className='groupbotton'><img src="https://imgc.allpostersimages.com/img/posters/2025-attack-on-titan-wall-calendar_u-L-FAEUWZ0.jpg" alt="" /><span>Name <div style={{color: '#ffffff',marginLeft: '100px'}}>Lorem ipsum dolor sit amet.</div></span></div>
+                <div></div>
+                <div>1</div>
+                <div>2</div>
+            </div>
+        </>
+    );
+};
+

@@ -198,6 +198,7 @@
     border-radius: 20px;
     background-color: #404040;
     padding: 5px;
+    cursor: pointer;
 }
 
 
@@ -332,4 +333,36 @@
     visibility: visible;
     opacity: 1;
     font-size: 15px;
+}
+
+
+
+/*========================================================================================================================================================*/
+.bottoncontanner {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
+    background-color: #0F0F0F;
+    width: 100%;
+    height: 90px;
+    z-index: 1002;
+}
+.groupbotton{
+    position: fixed;
+}
+
+.bottoncontanner img{
+    position: fixed;
+    margin: 5px;
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+}
+
+.bottoncontanner span{
+    color: #ffffff;
+    position: relative;
+    top: 25px;
+    margin-left: 100px;
 }
