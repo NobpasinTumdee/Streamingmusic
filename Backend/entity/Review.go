@@ -7,13 +7,13 @@ import (
 
 type Review struct {
 	gorm.Model
-	DateReview  time.Time 		`json:"DateReview"`
-	Rating  int 		`json:"Rating"`
+	DateReview  	time.Time 	`json:"DateReview"`
+	Rating  		int 		`json:"Rating"`
 
-	UserID uint 		`json:"UserID"`
-	User   User 		`gorm:"foreignKey:UserID"`
+	UserID 			uint 		`json:"UserID"`
+	User   			User 		`gorm:"foreignKey:UserID"`
 
-	MusicID uint			`json:"MusicID"`
-	Music Music				`gorm:"foreignKey:MusicID"`
+	MusicID 		uint		`json:"MusicID"`
+	Music 			Music		`gorm:"foreignKey:MusicID"`
 
 }

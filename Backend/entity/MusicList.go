@@ -7,10 +7,10 @@ import (
 type MusicList struct {
 	gorm.Model
 
-	PlaylistID uint 		`json:"PlaylistID"`
-	Playlist   Playlist 		`gorm:"foreignKey:PlaylistID"`
+	PlaylistID 	uint 		`json:"PlaylistID"`
+	Playlist   	Playlist 	`gorm:"foreignKey:PlaylistID"`
 
-	MusicID uint			`json:"MusicID"`
-	Music Music				`gorm:"foreignKey:MusicID"`
+	MusicID 	uint		`json:"MusicID"`
+	Music 		Music		`gorm:"foreignKey:MusicID"`
 
 }

@@ -1,21 +1,33 @@
 package main
 
 import (
-	"music/entity"
-
+	"music/config"
 	"github.com/gin-gonic/gin"
-	"gorm.io/driver/sqlite"
-	"gorm.io/gorm"
+	"music/controller"
+  	"net/http"
 )
 
 const PORT = "8000"
 
 func main() {
-  db, err := gorm.Open(sqlite.Open("MusicData.db"), &gorm.Config{})
-  if err != nil {
-    panic("failed to connect database")
-  }
-  db.AutoMigrate(&entity.User{},&entity.History{},&entity.Music{},&entity.MusicList{},&entity.Playlist{},&entity.Payment{},&entity.Package{},&entity.Review{},)
+  	// open connection database
+	config.ConnectionDB()
+
+	// Generate databases
+	config.SetupDatabase()
+
+	r := gin.Default()
+
+	router := r.Group("")
+	{
+		router.GET("/music", controller.ListMusics) 
+
+	}
+
+	r.GET("/", func(c *gin.Context) {
+		c.String(http.StatusOK, "API RUNNING... PORT: %s", PORT)
+	})
+	r.Run("localhost:" + PORT)
 }
 
 func CORSMiddleware() gin.HandlerFunc {

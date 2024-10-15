@@ -7,12 +7,12 @@ import (
 
 type History struct {
 	gorm.Model
-	DateHistory  time.Time 		`json:"DateHistory"`
+	DateHistory  	time.Time 	`json:"DateHistory"`
 
-	UserID uint 		`json:"UserID"`
-	User   User 		`gorm:"foreignKey:UserID"`
+	UserID 			uint 		`json:"UserID"`
+	User   			User 		`gorm:"foreignKey:UserID"`
 
-	MusicID uint			`json:"MusicID"`
-	Music Music				`gorm:"foreignKey:MusicID"`
+	MusicID 		uint		`json:"MusicID"`
+	Music 			Music		`gorm:"foreignKey:MusicID"`
 
 }
