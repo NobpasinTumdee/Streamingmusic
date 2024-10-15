@@ -1,6 +1,9 @@
 import React from 'react';
 import './Main.css'
 import playbtn from '../../assets/icon/PlayButtonCircled.png';
+import Homeicon from '../../assets/icon/Home.png';
+import Notification from '../../assets/icon/Notification.png';
+import People from '../../assets/icon/People.png';
 export const ComponentMain: React.FC = () => {
     const Datatest = [
         {id: 1,name: 'Polyphia'},{id: 2,name: 'Polyphia'},{id: 3,name: 'Polyphia'},{id: 4,name: 'Polyphia'},{id: 5,name: 'Polyphia'},{id: 6,name: 'Polyphia'},{id: 7,name: 'Polyphia'},{id: 8,name: 'Polyphia'},
@@ -37,6 +40,7 @@ export const ComponentMain: React.FC = () => {
                         <>
                             <span className='PlaylistMainUserCard' key={Playlist.id}>
                                 <img src="https://imgc.allpostersimages.com/img/posters/2025-attack-on-titan-wall-calendar_u-L-FAEUWZ0.jpg" alt="polyphia logo" />
+                                <span className='PlaylistMainplay'><img  src={playbtn} alt="" /></span>
                                 <div className='DetailsplaylistUserMain'>Name Your PlayList</div>
                                 <div className='DetailsplaylistUserMain'>Details playlist User Main</div>
                             </span>
@@ -50,6 +54,7 @@ export const ComponentMain: React.FC = () => {
                         <>
                             <span className='PlaylistMainUserCard' key={Playlist.id}>
                                 <img src="https://t1.blockdit.com/photos/2022/08/62f25bb0c9d3634cdc91b487_800x0xcover_q1cOvEdo.jpg" alt="polyphia logo" />
+                                <span className='PlaylistMainplay'><img  src={playbtn} alt="" /></span>
                                 <div className='DetailsplaylistUserMain'>Name Your PlayList</div>
                                 <div className='DetailsplaylistUserMain'>Details playlist User Main</div>
                             </span>
@@ -69,13 +74,15 @@ export const ComponentMainNavbar: React.FC = () => {
     return(
         <>
             <nav className='MainNav'>
-                <h3>Spotify</h3>
+                Spotify
+                <img className='Homeicon' src={Homeicon} alt="" />
                 <input className='inputMain' type="text" />
                 <a href="#">
-                    <img style={{width: '25px',position: 'relative' ,borderRadius: '20px'}} src="https://scontent.fnak3-1.fna.fbcdn.net/v/t39.30808-6/297412273_1103712770544237_4663638775877889323_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeE2U1GBz9RwMkB8LO3gyGOyD0lIw0Dk2O8PSUjDQOTY74Wmvi770I9kFs5DstlhbH4Vm26pI0JryreKrawczeu_&_nc_ohc=E7MH_4RERmIQ7kNvgGvMDrp&_nc_zt=23&_nc_ht=scontent.fnak3-1.fna&_nc_gid=AvOKn40H_Q-pf3cQzuNR5yn&oh=00_AYBGCLpie-KMyHekzarDAtb7Wb8_fZwJ3jvuw-gFHlvYBQ&oe=67140AEF" alt="" />
+                    <img style={{width: '24px',position: 'relative' ,borderRadius: '20px'}} src="https://scontent.fnak3-1.fna.fbcdn.net/v/t39.30808-6/297412273_1103712770544237_4663638775877889323_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeE2U1GBz9RwMkB8LO3gyGOyD0lIw0Dk2O8PSUjDQOTY74Wmvi770I9kFs5DstlhbH4Vm26pI0JryreKrawczeu_&_nc_ohc=E7MH_4RERmIQ7kNvgGvMDrp&_nc_zt=23&_nc_ht=scontent.fnak3-1.fna&_nc_gid=AvOKn40H_Q-pf3cQzuNR5yn&oh=00_AYBGCLpie-KMyHekzarDAtb7Wb8_fZwJ3jvuw-gFHlvYBQ&oe=67140AEF" alt="" />
                 </a>
-                <a href="#">Setting</a>
-                <a href="#">Music</a>
+                <a className='Peoplevisible' href="#"><img src={People} alt="" /><span className='People'>Friend Activity</span></a>
+                <a className='Notificationvisible' href="#"><img src={Notification} alt="" /><span className='Notification'>What's New</span></a>
+                <a  style={{backgroundColor: '#ffffff', padding: '3px 10px' , color: '#000' , borderRadius: '20px'}} href="#">Explore Premium</a>
             </nav>
         </>
     );
