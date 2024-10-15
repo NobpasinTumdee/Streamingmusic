@@ -1,0 +1,215 @@
+.Maincom {
+    position: fixed;
+    right: 20px;
+    bottom: 25px;
+    background: linear-gradient(to bottom, #313131, #030303 ,#030303);
+    width: 95%;
+    height: 90%;
+    border-radius: 7px;
+    overflow-y: scroll; /* เพิ่มการเลื่อนแนวตั้ง */
+    scrollbar-width: none;
+}
+
+.texthead {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #ffffff;
+}
+
+
+.optionBtn {
+    position: fixed;
+    margin: 30px 20px 0;
+    z-index: 1000;
+}
+.optionBtn a{
+    margin: 10px;
+    height: auto;
+    text-decoration: none;
+    
+}
+.optionA{
+    box-shadow: 0 0 10px #00000071;
+    border-radius: 20px;
+    width: 40px;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+
+
+.topboxmain{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 80px;
+    margin-left: 20px;
+}
+.boxMain{
+    margin: 0px;
+    width: 100%;
+    height: 80px;
+    background-color: #404040;
+    border-radius: 7px;
+    box-shadow: 0 0 15px #00000036;
+}
+.boxMain img{
+    width: 80px;
+    height: 80px;
+    border-radius: 7px 0 0 7px;
+    position: absolute;
+    box-shadow: 0 0 15px #1f1f1f;
+}
+.boxMain p{
+    color: #ffffff;
+    position: relative;
+    padding: 10px 2px;
+    margin-left: 85px;
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+
+.PlaylistMainUser{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    overflow-x: scroll; /* เพิ่มการเลื่อนแนวนอน */
+    scrollbar-width: none;
+}
+
+.PlaylistMainUserCard{
+    background-color: transparent;
+    width: 200px;
+    height: 270px;
+    border-radius: 7px;
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+}
+.PlaylistMainUserCard:hover{
+    background-color: #404040;
+}
+.PlaylistMainUserCard img{
+    width: 100%;
+    border-radius: 7px;
+}
+.DetailsplaylistUserMain{
+    margin-top: 5px;
+    color: #ffffff86;
+    font-size: 14px;
+}
+
+
+/*========================================================================================================================================================*/
+.MainNav {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 30px;
+    background-color: #0F0F0F;
+    padding: 10px;
+    color: #ffffff;
+}
+
+.MainNav a{
+    float: right;
+    color: #ffffff;
+    text-align: center;
+    padding: 0px 0px;
+    text-decoration: none;
+    font-size: 17px;
+    margin-right: 30px;
+}
+
+.MainNav h3{
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.inputMain {
+    margin-left: 30px;
+    color: #ffffff;
+    background-color: #252525;
+    border-radius: 20px;
+    border: none;
+    height: 30px;
+    width: 300px;
+}
+
+
+
+
+/*========================================================================================================================================================*/
+
+/*1F1F1F*/
+
+.MainSidebar {
+    position: fixed;
+    margin-top: 50px;
+    color: #ffffff;
+    background-color: #1F1F1F;
+    width: 50px;
+    height: 90%;
+    border-radius: 0 5px 5px 0;
+    z-index: 1001;
+}
+
+.MainSidebar li {
+    background-color: transparent;
+    list-style-type: none; 
+    margin: 8px 3px;
+    height: 43px;
+    border-radius: 7px;
+}
+.MainSidebar img {
+    height: 43px;
+    border-radius: 7px;
+}
+.MainSidebar a {
+    text-decoration: none;
+    color: #000;
+}
+
+.textside {
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 10px;
+    background-color: #313131;
+    padding: 5px;
+    border-radius: 7px;
+
+    visibility: hidden;
+    opacity: 0;
+    transition:  0.1s ease-in-out;
+}
+.liMain:hover .textside{
+    visibility: visible;
+    opacity: 1;
+}
+
+.onesubsidebar{
+    background: linear-gradient(to bottom, #1F1F1F, #1F1F1F ,#1F1F1F);
+    font-size: 30px;
+    text-align: center;
+    
+}
+
+.twosubsidebar{
+    background: linear-gradient(to right, #ffd993, #cc913a ,#634000);
+    font-size: 30px;
+    text-align: center;
+}
+.onesubsidebar:hover .textside{
+    visibility: visible;
+    opacity: 1;
+    font-size: 15px;
+}
+.twosubsidebar:hover .textside{
+    visibility: visible;
+    opacity: 1;
+    font-size: 15px;
+}
