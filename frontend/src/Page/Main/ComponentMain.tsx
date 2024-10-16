@@ -6,6 +6,10 @@ import playbtn from '../../assets/icon/PlayButtonCircled.png';
 import Homeicon from '../../assets/icon/Home.png';
 import Notification from '../../assets/icon/Notification.png';
 import People from '../../assets/icon/People.png';
+import Play from '../../assets/iconbottonplay/Play.png'
+import Pause from '../../assets/iconbottonplay/Pause.png'
+import End from '../../assets/iconbottonplay/End.png'
+import Rewind from '../../assets/iconbottonplay/Rewind.png'
 
 //API
 import { GetUserById } from '../../services/https';
@@ -143,7 +147,7 @@ export const ComponentMainNavbar: React.FC = () => {
                 </a>
                 <a className='Peoplevisible' href="#"><img src={People} alt="" /><span className='People'>Friend Activity</span></a>
                 <a className='Notificationvisible' href="#"><img src={Notification} alt="" /><span className='Notification'>What's New</span></a>
-                <a style={{ backgroundColor: '#ffffff', padding: '3px 10px', color: '#000', borderRadius: '20px' }} href="#">Explore Premium</a>
+                <a style={{ backgroundColor: '#ffffff', padding: '5px 10px', color: '#000', borderRadius: '20px',fontSize: '14px' ,fontFamily: 'sans-serif'}} href="#">Explore Premium</a>
             </nav>
         </>
     );
@@ -181,7 +185,26 @@ export const BottonMain: React.FC = () => {
             <div className='bottoncontanner'>
                 <div className='groupbotton'><img src="https://imgc.allpostersimages.com/img/posters/2025-attack-on-titan-wall-calendar_u-L-FAEUWZ0.jpg" alt="" /><span>Name <div style={{color: '#ffffff',marginLeft: '100px'}}>Lorem ipsum dolor sit amet.</div></span></div>
                 <div></div>
-                <div>1</div>
+                <div className='ControllerPlay'>
+                    <div className='Playbtn'>
+                        <span><img src={Rewind} alt="" /></span>
+                        <span><img src={Play} alt="" /></span>
+                        <span><img src={End} alt="" /></span>
+                    </div>
+                    <div className='VolumeControlbtn'>
+                        <span style={{margin: '5px'}}>00:00</span>
+                        <span style={{margin: '0px'}}><input
+                            style={{color: '#000'}}
+                            id="volume-control"
+                            type="range"
+                            min="0"
+                            max="1"
+                            step="0.01"
+                            />
+                        </span>
+                        <span style={{margin: '5px'}}>03:59</span>
+                    </div>
+                </div>
                 <div>2</div>
             </div>
         </>
