@@ -176,6 +176,7 @@
 .MainNav img {
     width: 24px;
     height: 24px;
+    cursor: pointer;
 }
 
 
@@ -259,6 +260,26 @@
     opacity: 1;
 }
 
+
+.menuuserpopup {
+    position: fixed;
+    font-size: 16px;
+    width: 100px;
+    height: auto;
+    padding: 5px;
+    transform: translate(-110px, 30px);
+    border-radius: 5px 0 5px 5px;
+    background-color: #313131;
+    box-shadow: 0 0 10px #000;
+}
+.menuuserpopup div{
+    font-size: 10px;
+    margin-top: 5px;
+    margin-left: 2px;
+    font-family:'Times New Roman', Times, serif;
+    text-align: left;
+    cursor: pointer;
+}
 /*========================================================================================================================================================*/
 
 /*1F1F1F*/

@@ -79,6 +79,11 @@ export const ComponentMain: React.FC = () => {
 export const ComponentMainNavbar: React.FC = () => {
     const userIdstr = localStorage.getItem("id");
     const [user, setUser] = useState<UsersInterface | null>(null);
+    const [isUserPop, setUserPop] = useState(false);
+
+    const PopUpuser = () => {
+        setUserPop(!isUserPop);
+    };
 
     useEffect(() => {
         if (userIdstr) {
@@ -101,14 +106,40 @@ export const ComponentMainNavbar: React.FC = () => {
         }
     };
 
+    //Log out
+    const Logout = () => {
+
+        localStorage.clear();
+    
+        message.success("Logout successful");
+    
+        setTimeout(() => {
+    
+          location.href = "/";
+    
+        }, 1000);
+    
+      };
     return (
         <>
             <nav className='MainNav'>
                 Spotify
                 <img className='Homeicon' src={Homeicon} alt="" />
                 <input className='inputMain' type="text" />
-                <a className='Uservisible' href="#">
-                    <img style={{ width: '24px', position: 'relative', borderRadius: '20px' }} src={user?.UserPic} alt="" /><span className='UserMain'>{user?.FirstName}</span>
+                <a className='Uservisible'>
+                    <img onClick={PopUpuser} style={{ width: '24px', position: 'relative', borderRadius: '20px' }} src={user?.UserPic} alt="" />
+                    <span className='UserMain'>{user?.FirstName}</span>
+                    {isUserPop && (
+                        <span className='menuuserpopup'>Menu
+                            <div>Account</div>
+                            <div>Profile</div>
+                            <div>Upgrade to Premium</div>
+                            <div>Settings</div>
+                            <div style={{backgroundColor: '#000', width: '100%',margin: '10px 0px',height: '1px',color: '#313131'}}>.</div>
+                            <div onClick={Logout}>Log out</div>
+                        </span>
+                    )}
+                    
                 </a>
                 <a className='Peoplevisible' href="#"><img src={People} alt="" /><span className='People'>Friend Activity</span></a>
                 <a className='Notificationvisible' href="#"><img src={Notification} alt="" /><span className='Notification'>What's New</span></a>
